@@ -1,0 +1,12 @@
+.header-img {
+	width: 75px;
+	height: auto;
+}
+
+.header {
+	max-width: 250px;
+}
+
+.header-inner {
+	background: linear-gradient(to right, rgb(78, 164, 208), rgb(132, 141, 159));
+}

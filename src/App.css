@@ -31,3 +31,17 @@ html,body {
   bottom: 0;
   z-index: -1;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  margin-left: 250px; /* Same as the width of the sidebar */
+  width: auto;
+}
+
+.side {
+  width: 250px;
+}

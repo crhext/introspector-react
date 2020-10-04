@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import logo from './logo.svg';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
+import InputBar from './components/InputBar/InputBar';
 import './App.css';
 
 const particleOptions = {
@@ -17,14 +17,33 @@ const particleOptions = {
     }
 };
 
-function App() {
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      descriptors: []
+    };
+  }
+
+  render() {
+
   return (
+
     <div className="App">
         <Particles className="particles" params={particleOptions} />
-        <Header />
-        <Navigation />
+        <div className="side">
+          <Header />
+          <Navigation />
+        </div>
+        <div className="main">
+          <InputBar />
+        </div>
     </div>
+    
   );
+}
 }
 
 export default App;
+

@@ -37,7 +37,7 @@ class App extends Component {
           <Navigation />
         </div>
         <div className="main">
-          <InputBar />
+          <InputBar descriptors={this.state.descriptors}/>
         </div>
     </div>
     

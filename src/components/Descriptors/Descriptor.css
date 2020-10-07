@@ -1,0 +1,25 @@
+.descriptor {
+	display: inline-block;
+}
+
+.cross {
+	font-size: 1.9em;
+}
+
+.descriptor-container {
+	position: relative;
+}
+
+.descriptor-inner {
+	position: absolute;
+	top:0;
+	right:0;
+}
+
+.background-colour {
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

@@ -3,6 +3,7 @@ import Particles from 'react-particles-js';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import InputBar from './components/InputBar/InputBar';
+import Descriptors from './components/Descriptors/Descriptors';
 import './App.css';
 
 const particleOptions = {
@@ -22,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      descriptors: []
+      descriptors: ['ehllo', 'hello']
     };
   }
 
@@ -38,6 +39,7 @@ class App extends Component {
         </div>
         <div className="main">
           <InputBar descriptors={this.state.descriptors}/>
+          <Descriptors descriptors={this.state.descriptors}/>
         </div>
     </div>
     

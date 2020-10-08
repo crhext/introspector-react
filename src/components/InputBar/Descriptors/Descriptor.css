@@ -1,9 +1,11 @@
 .descriptor {
 	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .cross {
-	font-size: 1.9em;
+	font-size: 1.7em;
 }
 
 .descriptor-container {

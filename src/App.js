@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      descriptors: ['ehllo', 'hello']
+      descriptors: []
     };
   }
 
@@ -36,8 +36,10 @@ class App extends Component {
           <Header />
           <Navigation />
         </div>
-        <div className="main">
-          <InputBar descriptors={this.state.descriptors}/>
+        <div className="main container">
+          <div>
+            <InputBar descriptors={this.state.descriptors}/>
+          </div>
         </div>
     </div>
     

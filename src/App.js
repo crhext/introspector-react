@@ -36,6 +36,11 @@ class App extends Component {
     }
   }
 
+  updateDescriptorHandler = (descriptorsArray) => {
+    this.setState({ descriptors: descriptorsArray})
+  }
+
+
   render() {
 
   return (
@@ -48,7 +53,7 @@ class App extends Component {
         </div>
         <div className="main container">
           <div>
-            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} />
+            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} />
           </div>
         </div>
     </div>

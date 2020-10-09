@@ -10,7 +10,7 @@ class Descriptors extends React.Component {
 		<div>
 			{this.props.descriptors.map(i => {
 				return (
-					<Descriptor descriptor={i} descriptors={this.props.descriptors} />
+					<Descriptor descriptor={i} descriptors={this.props.deleteDescriptorHandler} deleteDescriptorHandler={this.props.deleteDescriptorHandler} />
 				);
 			})}
 		</div>

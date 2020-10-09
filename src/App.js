@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
-import InputBar from './components/InputBar/InputBar';
+import InputDescriptors from './components/InputDescriptors/InputDescriptors';
 import './App.css';
 
 const particleOptions = {
@@ -26,6 +26,16 @@ class App extends Component {
     };
   }
 
+  deleteDescriptorHandler = (descriptor, event) => {
+    event.preventDefault()
+    const descriptorsArray = this.state.descriptors
+    if (descriptorsArray.indexOf(descriptor) > -1) {
+      const i = descriptorsArray.indexOf(descriptor);
+      descriptorsArray.splice(i,1);
+      this.setState({ descriptors: descriptorsArray})
+    }
+  }
+
   render() {
 
   return (
@@ -38,7 +48,7 @@ class App extends Component {
         </div>
         <div className="main container">
           <div>
-            <InputBar descriptors={this.state.descriptors}/>
+            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} />
           </div>
         </div>
     </div>

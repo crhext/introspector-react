@@ -29,7 +29,7 @@ class InputBar extends React.Component {
 		return (
 			<div className="input fl w-70">
 				<p className='f3'>
-					{'Please enter variables that summarise your day. '}
+					{'Please enter variables that summarise your day.'}
 				</p>
 				<form onSubmit={this.onEnterClick}>
 					<div className='pa4 br3 shadow-5 input-bar center '>

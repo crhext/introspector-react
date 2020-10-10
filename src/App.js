@@ -3,6 +3,7 @@ import Particles from 'react-particles-js';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import InputDescriptors from './components/InputDescriptors/InputDescriptors';
+import InputMeasurements from './components/InputMeasurements/InputMeasurements';
 import './App.css';
 
 const particleOptions = {
@@ -22,7 +23,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      descriptors: []
+      route: '',
+      descriptors: [],
+      foods: []
     };
   }
 
@@ -40,6 +43,12 @@ class App extends Component {
     this.setState({ descriptors: descriptorsArray})
   }
 
+  onRouteChange = route => {
+    this.setState({ route: route})
+  }
+
+
+
 
   render() {
 
@@ -53,7 +62,8 @@ class App extends Component {
         </div>
         <div className="main container">
           <div>
-            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} />
+            {/*<InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} />*/}
+            <InputMeasurements />
           </div>
         </div>
     </div>

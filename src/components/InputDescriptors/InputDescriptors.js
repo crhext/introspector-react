@@ -1,14 +1,14 @@
 import React from 'react';
 import Descriptors from './Descriptors/Descriptors';
 import InputBar from './InputBar/InputBar';
-import './InputDescriptors.css';
+
 
 class InputDescriptors extends React.Component {
 
 	displaySubmit = (descriptors) => {
 		if (this.props.descriptors.length > 0) {
 			return (
-				<button   className="f2 grow no-underline br-pill ba ph3 pv2 mb2 white bg-blue">Submit</button>
+				<button   className="f2 grow no-underline br-pill ba ph3 pv2 mb2 white bg-blue">Next</button>
 			)}		
 	}
 

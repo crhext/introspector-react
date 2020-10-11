@@ -21,19 +21,17 @@ class InputBar extends React.Component {
 			const descriptorsArray = this.props.descriptors
 			descriptorsArray.push(descriptorLower)
 			this.setState({ inputField:''})
-			this.props.updateDescriptorHandler(descriptorsArray);		
+			this.props.updateDescriptorHandler(this.props.descriptorsType,descriptorsArray);		
 		} 
 	}
 
 	render() {
 		return (
 			<div className="input fl w-70">
-				<p className='f3'>
-					{'Please enter variables that summarise your day.'}
-				</p>
+
 				<form onSubmit={this.onEnterClick}>
 					<div className='pa4 br3 shadow-5 input-bar center '>
-						<input className="f4 pa2 w-50 center" type='text' onChange={this.onInputChange} type="text" value={this.state.inputField}/>
+						<input className="f4 pa2 w-50 center br-pill" type='text' onChange={this.onInputChange} type="text" value={this.state.inputField}/>
 						<button type="submit"  className="w-30 f4 grow no-underline br-pill ba ph3 pv2  dib  white bg-blue">Enter</button>
 					</div>
 				</form>

@@ -25,7 +25,6 @@ class App extends Component {
     this.state = {
       route: 'home',
       username: 'crhext',
-      descriptors: [],
       activityDescriptors: [],
       foodDescriptors:[],
       mood: 3,
@@ -34,18 +33,34 @@ class App extends Component {
     };
   }
 
-  deleteDescriptorHandler = (descriptor, event) => {
+  descriptorsTypeHandlerText = (route) => {
+    if (this.state.route == 'home') {
+      return 'activityDescriptors'
+    } else if (this.state.route == 'food') {
+      return 'foodDescriptors'
+    }    
+  }
+
+  descriptorsTypeHandlerState = (descriptorsType) => {
+      if (descriptorsType == 'activityDescriptors') {
+        return this.state.activityDescriptors
+      } else if (descriptorsType == 'foodDescriptors') {
+        return this.state.foodDescriptors
+      }     
+  }
+
+  deleteDescriptorHandler = (descriptorsType, descriptor, event) => {
     event.preventDefault()
-    const descriptorsArray = this.state.descriptors
+    const descriptorsArray = this.descriptorsTypeHandlerState(descriptorsType)
     if (descriptorsArray.indexOf(descriptor) > -1) {
       const i = descriptorsArray.indexOf(descriptor);
       descriptorsArray.splice(i,1);
-      this.setState({ descriptors: descriptorsArray})
+      this.setState({ [descriptorsType]: descriptorsArray})
     }
   }
 
-  updateDescriptorHandler = (descriptorsArray) => {
-    this.setState({ descriptors: descriptorsArray})
+  updateDescriptorHandler = (descriptorsType, descriptorsArray) => {
+    this.setState({ [descriptorsType]: descriptorsArray})
   }
 
   updateMeasurementsHandler = (measurement, value) => {
@@ -56,13 +71,32 @@ class App extends Component {
     this.setState({ route: route})
   }
 
-  render() {
+  renderSwitch(param) {
 
-  if (this.state.route == 'home') {
-    const descriptorsType = 'activityDescriptors'
-  } else if (this.state.route == 'food') {
-    const descriptorsType = 'foodDescriptors'
-  }
+    switch (param) {
+      case ("home"): 
+        return (
+          <div>
+            <InputDescriptors activityDescriptors={this.state.activityDescriptors} foodDescriptors={this.state.foodDescriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} descriptorsType={this.descriptorsTypeHandlerText(this.state.route)} descriptorsTypeHandlerState={this.descriptorsTypeHandlerState} onRouteChange={this.onRouteChange} />
+          </div>
+          );
+      case "food": 
+        return (
+          <div>
+            <InputDescriptors activityDescriptors={this.state.activityDescriptors} foodDescriptors={this.state.foodDescriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} descriptorsType={this.descriptorsTypeHandlerText(this.state.route)} descriptorsTypeHandlerState={this.descriptorsTypeHandlerState} onRouteChange={this.onRouteChange} />
+          </div>
+          );
+      case "measurements": 
+        return (
+          <div>
+            <InputMeasurements updateMeasurementsHandler={this.updateMeasurementsHandler} />
+          </div>
+          );
+      }
+    }
+
+
+  render() {
 
   return (
 
@@ -74,8 +108,8 @@ class App extends Component {
         </div>
         <div className="main container">
           <div>
-            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} descriptorsType={this.descriptorsType} />
-            {/*<InputMeasurements updateMeasurementsHandler={this.updateMeasurementsHandler} />*/}
+          {this.renderSwitch(this.state.route)}
+
           </div>
         </div>
     </div>

@@ -9,24 +9,9 @@ import { ThemeProvider } from '@material-ui/styles';
 
 class Mood extends React.Component {
 
-	constructor(props) {
-	    super(props);
-	    this.state = {
-	      mood: 3
-	    };
-	  }
-
-
-	onSlideChange = value => {
-		this.setState({mood: value})
-	}
-
 	handleChange = (e, value) => {
-	this.setState({
-	  mood: value 
-	});
+	this.props.updateMeasurementsHandler('mood', value)
 	};
-
 
 	render() {
 
@@ -37,7 +22,7 @@ class Mood extends React.Component {
 	      color: "#357a38",
 	      },
 	      track: {
-	        color: 'green'
+	        color: '#4caf50'
 	      },
 	      rail: {
 	        color: '#6fbf73'
@@ -48,7 +33,8 @@ class Mood extends React.Component {
 
 	  return (
 	    <div className="w-60">
-		    <div className="w-100 ba bw2 b--dark-green mood">
+	    	<div className="pa3 f3"> Mood </div>
+		    <div className="w-100 ba bw2 b--dark-green mood br-pill">
 			    <div className="w-90 center pa3">
 			    <ThemeProvider theme={muiTheme}>
 			      <Slider className="w-90"

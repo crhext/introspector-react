@@ -23,9 +23,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: '',
+      route: 'home',
+      username: 'crhext',
       descriptors: [],
-      foods: []
+      activityDescriptors: [],
+      foodDescriptors:[],
+      mood: 3,
+      energy: 3, 
+      productivity: 3
     };
   }
 
@@ -43,14 +48,21 @@ class App extends Component {
     this.setState({ descriptors: descriptorsArray})
   }
 
+  updateMeasurementsHandler = (measurement, value) => {
+    this.setState( {[measurement]: value})
+  }
+
   onRouteChange = route => {
     this.setState({ route: route})
   }
 
-
-
-
   render() {
+
+  if (this.state.route == 'home') {
+    const descriptorsType = 'activityDescriptors'
+  } else if (this.state.route == 'food') {
+    const descriptorsType = 'foodDescriptors'
+  }
 
   return (
 
@@ -62,8 +74,8 @@ class App extends Component {
         </div>
         <div className="main container">
           <div>
-            {/*<InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} />*/}
-            <InputMeasurements />
+            <InputDescriptors descriptors={this.state.descriptors} deleteDescriptorHandler={this.deleteDescriptorHandler} updateDescriptorHandler={this.updateDescriptorHandler} descriptorsType={this.descriptorsType} />
+            {/*<InputMeasurements updateMeasurementsHandler={this.updateMeasurementsHandler} />*/}
           </div>
         </div>
     </div>

@@ -17,7 +17,7 @@ class InputDescriptors extends React.Component {
 		return (
 
 			<div className="center fl w-100 input-container">
-				<InputBar descriptors={this.props.descriptors} onEnterClick={this.onEnterClick} onInputChange={this.onInputChange} updateDescriptorHandler={this.props.updateDescriptorHandler}/>
+				<InputBar descriptors={this.props.descriptors} onEnterClick={this.onEnterClick} onInputChange={this.onInputChange} updateDescriptorHandler={this.props.updateDescriptorHandler} descriptorsType={this.props.descriptorsType} />
 				<hr></hr>
 				<div className="descriptors-container">
 					<Descriptors descriptors={this.props.descriptors} deleteDescriptorHandler={this.props.deleteDescriptorHandler}/>

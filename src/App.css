@@ -116,3 +116,14 @@ html,body {
 .mood {
   background: linear-gradient(to right, rgb(194, 255, 212), rgb(5, 255, 147));;
 }
+
+.energy {
+  background: linear-gradient(to right, rgb(194, 232, 255), rgb(5, 205, 255));
+}
+
+.productivity {
+  background: linear-gradient(to right, rgb(251, 255, 194), rgb(201, 255, 5));
+}
+
+
+

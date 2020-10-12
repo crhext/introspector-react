@@ -1,14 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
-class Energy extends React.Component {
+
+
+class Mood extends React.Component {
 
 	handleChange = (e, value) => {
-	this.props.updateMeasurementsHandler('energy', value)
+	this.props.updateMeasurementsHandler('mood', value)
 	};
 
 	render() {
@@ -17,13 +17,13 @@ class Energy extends React.Component {
 	  overrides:{
 	    MuiSlider: {
 	      thumb:{
-	      color: "#1769aa",
+	      color: "#357a38",
 	      },
 	      track: {
-	        color: '#2196f3'
+	        color: '#4caf50'
 	      },
 	      rail: {
-	        color: '#4dabf5'
+	        color: '#6fbf73'
 	      }
 	    }
 	}
@@ -31,8 +31,8 @@ class Energy extends React.Component {
 
 	  return (
 	    <div className="w-60">
-	    	<div className="pa3 f3 "> Energy </div>
-		    <div className="w-100 ba bw2 b--dark-blue energy br-pill">
+	    	<div className="pa3 f3"> Mood </div>
+		    <div className="w-100 ba bw2 b--dark-green mood br-pill">
 			    <div className="w-90 center pa3">
 			    <ThemeProvider theme={muiTheme}>
 			      <Slider className="w-90"
@@ -52,4 +52,8 @@ class Energy extends React.Component {
 
 };
 
-export default Energy;
+
+
+
+export default Mood
+

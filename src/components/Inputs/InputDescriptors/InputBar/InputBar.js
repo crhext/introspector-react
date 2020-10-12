@@ -28,10 +28,9 @@ class InputBar extends React.Component {
 	render() {
 		return (
 			<div className="input fl w-70">
-
 				<form onSubmit={this.onEnterClick}>
 					<div className='pa4 br3 shadow-5 input-bar center '>
-						<input className="f4 pa2 w-50 center br-pill" type='text' onChange={this.onInputChange} type="text" value={this.state.inputField}/>
+						<input className="f4 pa2 w-50 center br-pill" type='text' onChange={this.onInputChange} value={this.state.inputField}/>
 						<button type="submit"  className="w-30 f4 grow no-underline br-pill ba ph3 pv2  dib  white bg-blue">Enter</button>
 					</div>
 				</form>

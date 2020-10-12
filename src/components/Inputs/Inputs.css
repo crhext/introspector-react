@@ -1,0 +1,73 @@
+.input-bar {
+  background-color:#def;
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+  radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+  background-size:80px 80px;
+  background-position:0 0, 40px 40px;
+  }
+
+.input {
+  top:20px;
+}
+
+.descriptors-container {
+  padding-top: 20px;
+
+}
+
+.input-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.input-container hr {
+  width: 100%;
+  clear: both;
+  visibility: hidden;
+
+}
+
+.descriptor {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cross {
+  font-size: 1.7em;
+}
+
+.descriptor-container {
+  position: relative;
+}
+
+.descriptor-inner {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.background-colour {
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.slider {
+  width: 500px;
+}
+
+.mood {
+  background: linear-gradient(to right, rgb(194, 255, 212), rgb(5, 255, 147));;
+}
+
+.energy {
+  background: linear-gradient(to right, rgb(194, 232, 255), rgb(5, 205, 255));
+}
+
+.productivity {
+  background: linear-gradient(to right, rgb(251, 255, 194), rgb(201, 255, 5));
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputDescriptors from './InputDescriptors/InputDescriptors';
 import InputMeasurements from './InputMeasurements/InputMeasurements';
+import './Inputs.css';
 
 class Inputs extends Component {
 

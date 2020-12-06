@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputDescriptors from './InputDescriptors/InputDescriptors';
 import InputMeasurements from './InputMeasurements/InputMeasurements';
+import FirebaseInputs from './FirebaseInputs';
 import './Inputs.css';
 
 class Inputs extends Component {
@@ -47,6 +48,26 @@ class Inputs extends Component {
 	this.setState({ route: route})
 	}
 
+	firebaseInputsHander = (e) => {
+		e.preventDefault();
+		let today = new Date().toLocaleDateString('en-GB', {month: '2-digit',day: '2-digit',year: 'numeric'})
+		const data = {
+			date: today,
+			username: this.props.username, 
+			activityDescriptors: this.state.activityDescriptors,
+			foodDescriptors: this.state.foodDescriptors,
+			mood: this.state.mood,
+			energy: this.state.energy,
+			productivity: this.state.productivity
+		}
+
+		const fileName = '/inputs.json'
+		FirebaseInputs.post(fileName, data).then(response => {
+			console.log(response)
+		})
+
+	}
+
 	renderSwitch(param) {
 		switch (param) {
 			case "activity": 
@@ -64,7 +85,13 @@ class Inputs extends Component {
 			case "measurement": 
 				return (
 					<div>
-           				<InputMeasurements updateMeasurementsHandler={this.updateMeasurementsHandler} />
+           				<InputMeasurements user={this.props.user} updateMeasurementsHandler={this.updateMeasurementsHandler} firebaseInputsHander={this.firebaseInputsHander} onInputsRouteChange={this.onInputsRouteChange}/>
+					</div>
+					);
+			case "submitted": 
+				return (
+					<div>
+           				<h1>Thanks for submitting how you feel today</h1>
 					</div>
 					);
 			default:

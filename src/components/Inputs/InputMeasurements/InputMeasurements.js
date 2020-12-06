@@ -17,6 +17,9 @@ class InputMeasurements extends React.Component {
 				<Energy updateMeasurementsHandler={this.props.updateMeasurementsHandler} />
 				<hr></hr>
 				<Productivity updateMeasurementsHandler={this.props.updateMeasurementsHandler} />
+				<hr></hr>
+				<hr></hr>
+				<button className="f2 grow no-underline br-pill ba ph3 pv2 mb2 white bg-blue pa3 nb" onClick={(e) => {this.props.firebaseInputsHander(e)} }> Submit</button>
 
 			</div>
 		);

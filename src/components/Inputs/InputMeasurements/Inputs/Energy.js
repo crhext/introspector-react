@@ -30,7 +30,7 @@ class Energy extends React.Component {
 	  return (
 	    <div className="w-60">
 	    	<div className="pa3 f3 "> Energy </div>
-		    <div className="w-100 ba bw2 b--dark-blue energy br-pill">
+		    <div className="w-100 ba  energy br-pill">
 			    <div className="w-90 center pa3">
 			    <ThemeProvider theme={muiTheme}>
 			      <Slider className="w-90"

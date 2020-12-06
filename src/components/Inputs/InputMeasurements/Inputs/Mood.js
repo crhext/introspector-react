@@ -32,7 +32,7 @@ class Mood extends React.Component {
 	  return (
 	    <div className="w-60">
 	    	<div className="pa3 f3"> Mood </div>
-		    <div className="w-100 ba bw2 b--dark-green mood br-pill">
+		    <div className="w-100 ba  mood br-pill">
 			    <div className="w-90 center pa3">
 			    <ThemeProvider theme={muiTheme}>
 			      <Slider className="w-90"

@@ -27,11 +27,11 @@ class InputBar extends React.Component {
 
 	render() {
 		return (
-			<div className="input fl w-70">
+			<div className="input fl w-70-ns w-90-m">
 				<form onSubmit={this.onEnterClick}>
-					<div className='pa4 br3 shadow-5 input-bar center '>
-						<input className="f4 pa2 w-50 center br-pill" type='text' onChange={this.onInputChange} value={this.state.inputField}/>
-						<button type="submit"  className="w-30 f4 grow no-underline br-pill ba ph3 pv2  dib  white bg-blue">Enter</button>
+					<div className='pa4 br3 shadow-5 input-bar center nb '>
+						<input className="f4 pa2 w-50 center br-pill nb" type='text' onChange={this.onInputChange} value={this.state.inputField}/>
+						<button type="submit"  className="w-30 f4 grow no-underline br-pill ba ph3 pv2  dib  white bg-blue nb">Enter</button>
 					</div>
 				</form>
 			</div>

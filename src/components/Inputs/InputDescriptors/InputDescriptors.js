@@ -27,7 +27,7 @@ class InputDescriptors extends React.Component {
 	displaySubmit = (descriptorsArray) => {
 		if (descriptorsArray.length > 0 || descriptorsArray === undefined) {
 			return (
-				<button className="f2 grow no-underline br-pill ba ph3 pv2 mb2 white bg-blue" onClick={()=>this.nextRouteHandler(this.props.descriptorsType)}> Next</button>
+				<button className="nb f2 grow no-underline br-pill ba ph3 pv2 mb2 white bg-blue" onClick={()=>this.nextRouteHandler(this.props.descriptorsType)}> Next</button>
 			)}		
 	}
 

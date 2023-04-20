@@ -12,7 +12,7 @@ const Header = ({ setNavState, navFilter, route }) => {
 		            	<h1 className="f3 pointer dim">
 		            		Introspector
 		            	</h1>
-			        <p className="f6 i">Look inwards to identify what makes you happy, productive, and energised.</p>
+			        <p className="f6 i">Look inwards to identify what makes you feel happy, productive, and energised.</p>
 				</div> 
 			</Tilt>
 		</div>
